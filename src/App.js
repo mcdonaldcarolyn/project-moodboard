@@ -9,6 +9,7 @@ import { TouchBackend } from "react-dnd-touch-backend";
 import update from "immutability-helper";
 import { isTouchDevice } from "./utils/isTouchDevice";
 
+const backendForDND = isTouchDevice() ? TouchBackend : HTML5Backend;
 
 function App() {
   
@@ -24,7 +25,7 @@ function App() {
         ]);
       };
       reader.readAsDataURL(file);
-      returnfile;
+      return file;
     });
   }, []);
 
@@ -41,24 +42,17 @@ function App() {
   };
   /* makes images draggable*/
   return (
-    <div className="App">
+    <main className="App">
       <h1 className="moodboard-center">MoodBoard</h1>
       {images && images.length > 0 && (
         <h3 className="moodboard-center">Add and drag images </h3>
-        )}
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      )}
+      <DndProvider backend={backendForDND}>
+        <MoodboardImage images={images} moveImage={moveImage} />
+      </DndProvider>
+      <Moodboard onDrop={onDrop} accept={"image/*"} />
+    </main>
+        
   );
 }
 
