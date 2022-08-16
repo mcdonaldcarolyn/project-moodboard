@@ -1,5 +1,5 @@
 import React from "react";
-import { useDropZone } from "react-dropzone";
+import { useDropzone } from "react-dropzone";
 
 const getClassName = (className, isActive) => {
   if (!isActive) return className;
@@ -8,7 +8,7 @@ const getClassName = (className, isActive) => {
 
 const Moodboard = ({ onDrop, accept }) => {
   const { getRootProps, getInputProps, isDragActive } =
-    useDropZone({
+    useDropzone({
       onDrop,
       accept,
     });
