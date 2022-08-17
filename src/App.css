@@ -2,9 +2,43 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.moodboard-center {
+  display: flex ;
+  height:100%;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+.moodboard {
+  padding: 1px;
+  height: 5vh;
+  border: 2px dashed #7649bc;
+  border-radius: 90px;
+  outline: teal;
+  cursor: pointer;
+}
+.moodboard-active {
+  background-color: #f1e2ff;
+  border: 5px solid #2fd7b5;
+}
+.moodboard-content {
+  align-self: center;
+  font-size: 24px;
+}
+.moodboard-img-list {
+  margin: 50px O;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+.moodboard-img-item {
+  width: calc(90% - 9px);
+  height: calc(90% - 9px);
+  border: 7px solid grey;
+  border-radius: 10px;
+  margin: 10px;
+  cursor: move;
+  transition: all 2.2s linear;
 }
 
 @media (prefers-reduced-motion: no-preference) {
