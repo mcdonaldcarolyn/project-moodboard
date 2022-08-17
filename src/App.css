@@ -40,33 +40,29 @@
   cursor: move;
   transition: all 2.2s linear;
 }
+.moodboard-img {
+  width: 100%;
+  height: 100%;
+}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+@media (max-width: 1000px) {
+  .App {
+    max-width: 600px;
+  }
+  .moodboard-img-item {
+    width: calc(50% - 22px);
+    height: 200px;
+  }
+}
+@media (max-width: 640px) {
+  .App {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+  .moodboarding-img-item {
+    width: calc(100%-22px);
+    height: 200px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
