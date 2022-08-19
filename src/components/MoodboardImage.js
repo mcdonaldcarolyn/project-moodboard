@@ -1,4 +1,4 @@
-import { toBeInTheDOM } from "@testing-library/jest-dom/dist/matchers";
+//import { toBeInTheDOM } from "@testing-library/jest-dom/dist/matchers";
 import React, { useRef } from "react";
 import { useDrag, useDrop } from "react-dnd";
 
@@ -6,6 +6,7 @@ const type = "Image";
 
 const Image = ({ image, index, moveImage }) => {
   const ref = useRef(null);
+  
   const [, drop] = useDrop({
     accept: type,
     hoover(item) {
@@ -52,7 +53,7 @@ const MoodboardImage = ({ images, moveImage }) => {
         image={image}
         index={index}
         key={`${image.id}-image`}
-        moveIMage={moveImage}
+        moveImage={moveImage}
       />
     );
   

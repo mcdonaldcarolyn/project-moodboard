@@ -9,16 +9,17 @@ import { TouchBackend } from "react-dnd-touch-backend";
 import update from "immutability-helper";
 import { isTouchDevice } from "./utils/isTouchDevice";
 
+
 const backendForDND = isTouchDevice() ? TouchBackend : HTML5Backend;
 
 function App() {
   
   const [images, setImages] = useState([]);
 
-  const onDrop = useCallback((acceptedFiles) => {
-    acceptedFiles.map((file) => {
+  const onDrop = useCallback(acceptedFiles => {
+    acceptedFiles.map(file => {
       const reader = new FileReader();
-      reader.onload = function (e) {
+      reader.onload = function(e) {
         setImages((prevState) => [
           ...prevState,
           { id: uuidv4(), src: e.target.result },

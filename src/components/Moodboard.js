@@ -15,7 +15,7 @@ const Moodboard = ({ onDrop, accept }) => {
   
   return (
     <div
-      className={getClassName("moodbaord", isDragActive)}
+      className={getClassName("moodboard", isDragActive)}
       {...getRootProps()}
     >
       <input className="moodboard-input" {...getInputProps()} />
