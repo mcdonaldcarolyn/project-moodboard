@@ -12,7 +12,7 @@ const Moodboard = ({ onDrop, accept }) => {
       onDrop,
       accept,
     });
-  
+  console.log(onDrop)
   return (
     <div
       className={getClassName("moodboard", isDragActive)}

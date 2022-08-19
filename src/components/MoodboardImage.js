@@ -6,7 +6,7 @@ const type = "Image";
 
 const Image = ({ image, index, moveImage }) => {
   const ref = useRef(null);
-  
+  console.log("in image")
   const [, drop] = useDrop({
     accept: type,
     hoover(item) {
@@ -24,7 +24,8 @@ const Image = ({ image, index, moveImage }) => {
   });
 
   const [{ isDragging }, drag] = useDrag({
-    itme: { type, id: image.id, index },
+    type: "image",
+    item: { type, id: image.id, index },
     collect: (monitor) => ({
       isDragging: monitor.isDragging(),
     }),

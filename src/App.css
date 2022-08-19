@@ -1,5 +1,6 @@
 .App {
-  text-align: center;
+  max-width: 1920px;
+  margin: 5px auto;
 }
 
 .moodboard-center {
@@ -45,7 +46,7 @@
   height: 100%;
 }
 
-
+/*tablets */
 @media (max-width: 1000px) {
   .App {
     max-width: 600px;
@@ -55,6 +56,7 @@
     height: 200px;
   }
 }
+/* mobiles */
 @media (max-width: 640px) {
   .App {
     max-width: 100%;
